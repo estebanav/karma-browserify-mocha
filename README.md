@@ -2,11 +2,11 @@ karma-browserify-mocha
 ======================
 Location of the things
 
-lib: browserified JS files
+    lib: browserified JS files
 
-src: source JS files
+    src: source JS files
 
-test: mocha unit test
+    test: mocha unit test
 
 How to install the project
 
