@@ -6,6 +6,6 @@ module.exports = {
 		return el1*el2;
 	},
 	ver: function(){
-		return test();
+		return '1.0';
 	}
 }

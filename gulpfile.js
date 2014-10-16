@@ -1,11 +1,16 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
-    karma = require('gulp-karma');
+    karma = require('gulp-karma'),
+    react = require('gulp-react');
 
 var testFiles = [
     '/src/component/*.js',
     '/src/test/*.js'
 ];
+
+var reactFiles = 'src/***/*.jsx';
+
+var destination='dist/';
 
 gulp.task('connect', function() {
     connect.server();
@@ -23,4 +28,11 @@ gulp.task('karma-testing-dev', function() {
         });
 });
 
-gulp.task('default', ['karma-testing-dev','connect']);
+gulp.task('react-process', function() {
+    console.log('react-process');
+    return gulp.src(reactFiles)
+        .pipe(react())
+        .pipe(gulp.dest(destination));
+});
+
+gulp.task('default', ['react-process','karma-testing-dev','connect']);
